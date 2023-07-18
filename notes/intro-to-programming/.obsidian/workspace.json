@@ -32,31 +32,19 @@
             }
           },
           {
-            "id": "1f9828629f6325db",
-            "type": "leaf",
-            "state": {
-              "type": "markdown",
-              "state": {
-                "file": "TESTTESTTESTTEST.md",
-                "mode": "source",
-                "source": false
-              }
-            }
-          },
-          {
             "id": "e6fba300b8ec220f",
             "type": "leaf",
             "state": {
               "type": "markdown",
               "state": {
-                "file": "Questions.md",
+                "file": "2023-07-18.md",
                 "mode": "source",
                 "source": false
               }
             }
           }
         ],
-        "currentTab": 3
+        "currentTab": 2
       }
     ],
     "direction": "vertical"
@@ -141,7 +129,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "Questions.md"
+                "file": "2023-07-18.md"
               }
             }
           }
@@ -158,7 +146,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "Questions.md",
+                "file": "2023-07-18.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -181,7 +169,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "Questions.md",
+                "file": "2023-07-18.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -206,11 +194,13 @@
   },
   "active": "e6fba300b8ec220f",
   "lastOpenFiles": [
-    "TESTTESTTESTTEST.md",
+    "Angular Components.md",
+    "2023-07-18.md",
     "Questions.md",
     "2023-07-17.md",
-    "Untitled 1",
+    "TESTTESTTESTTEST.md",
     "Tailwind.md",
+    "Untitled 1",
     "Untitled",
     "2023-07-16.md"
   ]

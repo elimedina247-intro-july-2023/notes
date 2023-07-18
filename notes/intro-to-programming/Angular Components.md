@@ -1,0 +1,1 @@
+Angular is compiled into JavaScript which means you can use all JavaScript functions
