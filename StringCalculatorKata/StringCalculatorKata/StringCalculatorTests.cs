@@ -52,7 +52,18 @@ public class StringCalculatorTests
 
 
     [Theory(Skip = "Not Ready Yet")]
-    [InlineData("")]
+    [InlineData("1\n2\n3", 6)]
+    [InlineData("1,2\n3", 6)]
+    public void NewLineSeparators(string numbers, int expected)
+    {
+        var calculator = new StringCalculator();
+        var result = calculator.Add(numbers);
+
+        Assert.Equal(expected, result);
+    }
+
+    [Theory(Skip = "Not Ready Yet")]
+    [InlineData("//X;\n1X2X3", 6)]
 
     public void CustomDelimeters(string numbers, int expected)
     {
