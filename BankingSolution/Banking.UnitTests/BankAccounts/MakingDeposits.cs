@@ -10,7 +10,7 @@ public class MakingDeposits
     public void DepositsIncreaseTheBalance()
     {
         //Given
-        var account = new BankAccount();
+        var account = new BankAccount(new Mock<ICanCalculateBonusesForBankAccountDeposits>().Object);
         var openingBalance = account.GetBalance();
         decimal amountToDeposit = 100.25M;
 
@@ -23,16 +23,12 @@ public class MakingDeposits
 
     
 
-    [Fact(Skip = "just a demo")]
-    public void Demo()
+}
+
+public class DummyBonusCalculator : ICanCalculateBonusesForBankAccountDeposits
+{
+    public decimal CalculateBonusForDeposit(decimal balance, decimal amountToDeposit)
     {
-        var jcAccount = new BankAccount();
-        var joeyAccount = new BankAccount();
-
-        jcAccount.Deposit(100);
-
-        Assert.Equal(5100, jcAccount.GetBalance());
-
-        Assert.Equal(5000, joeyAccount.GetBalance());  
+        return 0;
     }
 }

@@ -10,7 +10,7 @@ public class MakingWithdrawals
     [Fact]
     public void MakingAWithdrawalDecreasesTheBalance()
     {
-        var account = new BankAccount();
+        var account = new BankAccount(new Mock<ICanCalculateBonusesForBankAccountDeposits>().Object);
         var openingBalance = account.GetBalance();
         var amountToWithdraw = 1.01M;
 
@@ -23,7 +23,7 @@ public class MakingWithdrawals
     [Fact]
     public void CanTakeEntireBalance()
     {
-        var account = new BankAccount();
+        var account = new BankAccount(new Mock<ICanCalculateBonusesForBankAccountDeposits>().Object);
         account.Withdraw(account.GetBalance());
 
         Assert.Equal(0, account.GetBalance());  
@@ -34,7 +34,7 @@ public class MakingWithdrawals
     [InlineData(-1)]
     public void InvalidAmountsAreNotAllowed(decimal amount)
     {
-        var account = new BankAccount();
+        var account = new BankAccount(new Mock<ICanCalculateBonusesForBankAccountDeposits>().Object);
         var openingBalance = account.GetBalance();
 
         Assert.Throws<InvalidBankAccountTransactionAmountException>( () =>
