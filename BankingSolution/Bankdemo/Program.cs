@@ -6,7 +6,7 @@ using Banking.Domain;
 var account = new BankAccount(new StandardBonusCalculator(new RegularBusinessClock(new SystemTime())));
 
 Console.Write("How much do you want to deposit?: ");
-
+ 
 var amountEntered = Console.ReadLine();
 if (amountEntered is not null)
 {

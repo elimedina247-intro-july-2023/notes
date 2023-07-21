@@ -1,10 +1,12 @@
 ﻿using FirstApp.Models;
+using FirstApp.Services;
 
 Console.WriteLine("Starting up The API");
 var builder = WebApplication.CreateBuilder(args);
 //Configuration for the API will go here.
 
-
+builder.Services.AddTransient<IProvideTheSystemStatus, StatusServices>();
+builder.Services.AddTransient<ISystemTime, SystemTime>();
 Console.WriteLine("About to Start the API");
 
 var app = builder.Build();
@@ -16,9 +18,10 @@ app.MapGet("/sayhi", () =>
 });
 
 
-app.MapGet("/status", () =>
+app.MapGet("/status", ([FromServies]IProvideTheSystemStatus _statusGenerator) =>
 {
-    var response = new StatusResponseModel(DateTime.Now, "Looks good", "Operating Normally");
+    //var response = new StatusResponseModel(DateTime.Now, "Looks good", "Operating Normally");
+    StatusResponseModel response = _statusGenerator.GetCurrentStatus();
     return Results.Ok(response);
     //Ok converts to JSON
 });
